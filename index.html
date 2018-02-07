@@ -1,34 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coffee Project</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>Coffee!</h1>
+<!--Update the html-->
+<!--Tables are a little old school, you need to refactor the code so that each coffee is displayed in a div that contains a heading displaying the coffee name, and the type of roast in a paragraph. Don't display the ids, these are only for our application's internal use-->
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
+<!--When the page loads, the coffees should be sorted by their ids in ascending order-->
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+<!--Add functionality to search through the coffees by name, and display only the coffees that match the provided search term (You will need to add an input field to the existing form for this)-->
+
+<!--Add functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.-->
+<main class="container-fluid">
+
+    <div class="container page-container">
+        <header role="banner">
+
+            <div class="row row-with-vspace site-branding container custom-nav container">
+                <!--FOR PAGE NAVIGATION BAR WHILE ON MEDIUM AND BIG SCREENS-->
+                <div class="col-xs-5 col-sm-3 site-title hidden-xs">
+                    <h1 class="site-title-heading">
+                        <a href="http://www.domorecoffee.com" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive" border="0"></a>
+                    </h1>
+                </div>
+                <!--FOR SLOGAN ON MEDIUM AND BIG SCREENS-->
+                <div class="col-xs-7 col-sm-9 page-header-top-right hidden-xs">
+                    <div class="tagline">Drink Coffee, do more!</div>
+                    <div class="sr-only">
+                        <a href="#content" title="Skip to content">Skip to content</a>
+                    </div>
+                </div>
+                <!--FOR SMALL SCREENS-->
+                <div class="col-sm-12 site-title visible-xs">
+                    <h1 class="site-title-heading">
+                        <a href="http://www.gygproductions.com" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive" border="0"></a>
+                    </h1>
+                </div>
+            </div><!--.site-branding-->
+
+            <div class="row main-navigation">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default" role="navigation">
+
+                        <div class="collapse navbar-collapse navbar-primary-collapse">
+                            <ul id="menu-menu-1" class="nav navbar-nav">
+                                <li id="menu-item-110" class="menu-item active active"><a href="#/">Home</a></li>
+
+                                <li class="dropdown btn-group" id="roast-selection">
+                                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                                        Coffee<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu coffeeSelector">
+
+                                        <li id="submenu1" class="menu-item">
+                                        <a id="light" class="dropdown-item roast" href="#">Light</a></li>
+
+                                        <li class="menu-item">
+                                        <a id="medium" class="dropdown-item roast" href="#">Medium</a></li>
+
+                                        <li class="menu-item">
+                                        <a id="dark" class="dropdown-item roast" href="#">Dark</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168">
+                                    <a href="#/project_gallery/">Gallery</a></li>
+                                <li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-205">
+                                    <a href="#">Contact us</a></li>
+                            </ul>
+
+                        </div><!--.navbar-collapse-->
+                    </nav>
+                </div>
+            </div><!--.main-navigation-->
+        </header>
+    </div><!--.page-container-->
+
+    <div class="container page-container">
+        <div class="row row-with-vspace site-branding container">
+        <!--FOR PAGE NAVIGATION BAR WHILE ON MEDIUM AND BIG SCREENS-->
+            <div class="col-sm-12">
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>ROAST</th>
+                    </tr>
+                    </thead>
+                    <tbody id="coffees"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
     <script src="main.js"></script>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</main>
 </body>
 </html>
+
+

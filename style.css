@@ -1,9 +1,50 @@
+body {
+    background-image: url("background-photo.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.custom-nav{
+    background: black;
+    background-size: cover;
+    width: 100%;
+}
+
+.custom-table {
+    text-align: center;
+    align-content: center;
+    float: left;
+}
+
+h1 img {
+    margin-bottom: 20px;
+}
+
+body h1{
+    color: white;
+}
+
 table {
+    border: solid white;
     border-collapse: collapse;
     margin: 15px 0;
+    color: white;
 }
 
 td, th {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 5px 10px;
+}
+
+.tagline {
+    color: white;
+    float: right;
+    margin-top: 1em;
+    font-size: xx-large;
+}
+
+.coffeeSelector {
+    color: white;
 }
