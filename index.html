@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#coffees").change(function () {
+            $("#displayText").html($(this).val());
+        });
+    });
+</script>
+
+
     <h1>Coffee!</h1>
 
     <form>
@@ -28,6 +41,51 @@
         </thead>
         <tbody id="coffees"></tbody>
     </table>
+
+    <h2>Coffee Types</h2>
+
+<div>
+    <form action='VERIFY.php' method='post'>
+        <select data-placeholder="Choose a Coffee Roast" class="chzn-select" name='location' id="locationSelect" size='1' style="width:350px;" tabindex="2">
+
+            <option value="">Choose Roast Type</option>
+            <option value="'Light City','Half City','Cinnamon'">Light Roasts</option>
+            <option value="'City','American','Breakfast'">Medium Roasts</option>
+            <option value="'High','Continental','New Orleans', 'European', 'Espresso', 'Viennese', 'Italian', 'French'">Dark Roasts</option>
+        </select>
+    </form>
+    <br />
+    <br />
+    <div id="displayText">
+    </div>
+</div>
+
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">
+
+    <ul id="myUL">
+        <li><a href="#">"Light City" (light)</a></li>
+        <li><a href="#">"Half City" (light)</a></li>
+
+        <li><a href="#">"Cinnamon" (light roast)</a></li>
+        <li><a href="#">"City" (medium roast)</a></li>
+        <li><a href="#">"American" (medium)</a></li>
+        <li><a href="#">"Breakfast" (medium)</a></li>
+        <li><a href="#">"High" (dark)</a></li>
+        <li><a href="#">"Continental" (dark)</a></li>
+        <li><a href="#">"New Orleans" (dark)</a></li>
+
+        <li><a href="#">"European" (dark roast)</a></li>
+        <li><a href="#">"Espresso" (dark roast)</a></li>
+        <li><a href="#">"Viennese" (dark roast)</a></li>
+        <li><a href="#">"Italian" (dark roast)</a></li>
+        <li><a href="#">"French" (dark roast)</a></li>
+    </ul>
+
+
+
+
+
 
     <script src="main.js"></script>
 </body>
