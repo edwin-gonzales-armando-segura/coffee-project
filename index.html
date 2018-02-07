@@ -8,15 +8,59 @@
 </head>
 <body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
 
 <script>
-    $(document).ready(function () {
-        $("#coffees").change(function () {
-            $("#displayText").html($(this).val());
-        });
-    });
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
+    // <!--$(document).ready(function () {-->
+    //     <!--$("#coffees").change(function () {-->
+    //         <!--$("#displayText").html($(this).val());-->
+    //     <!--});-->
+    // <!--});-->
 </script>
+<!--newdropdown-->
+<h2>Search/Filter Dropdown</h2>
+<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Search Coffee Types</button>
+    <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#about">Light City (light)</a>
+        <a href="#base">Half City (light)</a>
+        <a href="#blog">"Cinnamon" (light)</a>
+        <a href="#contact">"City" (medium)</a>
+        <a href="#custom">"American" (medium)</a>
+        <a href="#support">"Breakfast" (medium)</a>
+        <a href="#tools">"High" (dark)</a>
+        <a href="#tools">"Continental" (dark)</a>
+        <a href="#tools">"New Orleans" (dark)</a>
+        <a href="#tools">"European" (dark)</a>
+        <a href="#tools">"Espresso" (dark)</a>
+        <a href="#tools">"Viennese" (dark)</a>
+        <a href="#tools">"Italian" (dark)</a>
+        <a href="#tools">"French" (dark)</a>
+
+    </div>
+</div>
 
 
     <h1>Coffee!</h1>
@@ -44,44 +88,43 @@
 
     <h2>Coffee Types</h2>
 
-<div>
-    <form action='VERIFY.php' method='post'>
-        <select data-placeholder="Choose a Coffee Roast" class="chzn-select" name='location' id="locationSelect" size='1' style="width:350px;" tabindex="2">
+<!--<div>-->
+    <!--<form action='VERIFY.php' method='post'>-->
+        <!--<select data-placeholder="Choose a Coffee Roast" class="chzn-select" name='location' id="locationSelect" size='1' style="width:350px;" tabindex="2">-->
 
-            <option value="">Choose Roast Type</option>
-            <option value="'Light City','Half City','Cinnamon'">Light Roasts</option>
-            <option value="'City','American','Breakfast'">Medium Roasts</option>
-            <option value="'High','Continental','New Orleans', 'European', 'Espresso', 'Viennese', 'Italian', 'French'">Dark Roasts</option>
-        </select>
-    </form>
-    <br />
-    <br />
-    <div id="displayText">
-    </div>
-</div>
+            <!--<option value="">Choose Roast Type</option>-->
+            <!--<option value="'Light City','Half City','Cinnamon'">Light Roasts</option>-->
+            <!--<option value="'City','American','Breakfast'">Medium Roasts</option>-->
+            <!--<option value="'High','Continental','New Orleans', 'European', 'Espresso', 'Viennese', 'Italian', 'French'">Dark Roasts</option>-->
+        <!--</select>-->
+    <!--</form>-->
+    <!--<br />-->
+    <!--<br />-->
+    <!--<div id="displayText">-->
+    <!--</div>-->
+<!--</div>-->
 
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">
+    <!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">-->
 
-    <ul id="myUL">
-        <li><a href="#">"Light City" (light)</a></li>
-        <li><a href="#">"Half City" (light)</a></li>
+    <!--<ul id="myUL">-->
+        <!--<li><a href="#">"Light City" (light)</a></li>-->
+        <!--<li><a href="#">"Half City" (light)</a></li>-->
 
-        <li><a href="#">"Cinnamon" (light roast)</a></li>
-        <li><a href="#">"City" (medium roast)</a></li>
-        <li><a href="#">"American" (medium)</a></li>
-        <li><a href="#">"Breakfast" (medium)</a></li>
-        <li><a href="#">"High" (dark)</a></li>
-        <li><a href="#">"Continental" (dark)</a></li>
-        <li><a href="#">"New Orleans" (dark)</a></li>
+        <!--<li><a href="#">"Cinnamon" (light roast)</a></li>-->
+        <!--<li><a href="#">"City" (medium roast)</a></li>-->
+        <!--<li><a href="#">"American" (medium)</a></li>-->
+        <!--<li><a href="#">"Breakfast" (medium)</a></li>-->
+        <!--<li><a href="#">"High" (dark)</a></li>-->
+        <!--<li><a href="#">"Continental" (dark)</a></li>-->
+        <!--<li><a href="#">"New Orleans" (dark)</a></li>-->
 
-        <li><a href="#">"European" (dark roast)</a></li>
-        <li><a href="#">"Espresso" (dark roast)</a></li>
-        <li><a href="#">"Viennese" (dark roast)</a></li>
-        <li><a href="#">"Italian" (dark roast)</a></li>
-        <li><a href="#">"French" (dark roast)</a></li>
-    </ul>
-
+        <!--<li><a href="#">"European" (dark roast)</a></li>-->
+        <!--<li><a href="#">"Espresso" (dark roast)</a></li>-->
+        <!--<li><a href="#">"Viennese" (dark roast)</a></li>-->
+        <!--<li><a href="#">"Italian" (dark roast)</a></li>-->
+        <!--<li><a href="#">"French" (dark roast)</a></li>-->
+    <!--</ul>-->
 
 
 
