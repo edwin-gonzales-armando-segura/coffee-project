@@ -18,6 +18,30 @@ body {
     float: left;
 }
 
+.navbar-left{
+    float: left;
+}
+
+.navbar-right{
+    float: right;
+    margin-left: 40em;
+    text-align: center;
+}
+
+input {
+    padding: 0;
+
+}
+
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    text-align: center;
+    line-height: 3;
+
+}
+
 h1 img {
     margin-bottom: 20px;
 }
@@ -29,13 +53,16 @@ body h1{
 table {
     border: solid white;
     border-collapse: collapse;
+    background-color: azure;
     margin: 15px 0;
     color: white;
+    /*margin-left: 40%;*/
 }
 
 td, th {
     border: 1px solid white;
     padding: 5px 10px;
+    text-align: center;
 }
 
 .tagline {
@@ -47,4 +74,40 @@ td, th {
 
 .coffeeSelector {
     color: white;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+.table-background {
+    background-color: black;
 }
