@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
+    // html += '<td>' + coffee.id + '</td>';
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
@@ -16,6 +16,7 @@ function renderCoffees(coffees) {
     }
     // console.log(html)
     return html;
+    console.log(html);
 }
 
 function updateCoffees(finalRoast) {
@@ -49,7 +50,19 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('.menu-item');
 var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees);
+
+sortArray(coffees);
+
+function sortArray (coffees) {
+// sort by value
+    coffees.sort(function (a, b) {
+        return b.id - a.id;
+    });
+    console.log(coffees);
+
+    tbody.innerHTML = renderCoffees(coffees);
+}
+
 
 submitButton.addEventListener('click', updateCoffees);
 
@@ -72,7 +85,28 @@ selectingCoffee.forEach(function (element) {
 function myFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
+    // input = document.getElementsByClassName("inputBox");
     filter = input.value.toUpperCase();
+    console.log(filter);
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        console.log(a);
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+
+function myFunction2() {
+    var input, filter, ul, li, a, i;
+    // input = document.getElementById("myInput");
+    input = document.getElementsByClassName("inputBox");
+    filter = input[0].value.toUpperCase();
     console.log(filter);
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName("li");
@@ -91,7 +125,8 @@ function myFunction() {
 populateList();
 
 function populateList () {
-    for (var i = 1; i < coffees.length; i += 1) {
+    var sortedArray = coffees.sort(function (a, b) {return a.id - b.id;});
+    for (var i = 0; i <= sortedArray.length; i += 1) {
         var list = document.getElementById('myUL');
         list.innerHTML += renderCoffeeList(coffees[i]);
     }
@@ -100,67 +135,10 @@ function populateList () {
 function renderCoffeeList (coffee) {
     var html = '<li>' + '<a' + ' href="#">' + coffee.name + ' (' + coffee.roast + ')' + '</a>' + '</li>';
     return html;
+    console.log(html);
 }
 
 function listCoffees (coffee) {
     var html = '<li>' + '<a' + ' href="#">' + coffee[0].name + ' (' + coffee[0].roast + ')' + '</a>' + '</li>';
     return html;
 }
-
-
-// function unusedCode() {
-//
-// list.forEach(function(element) {
-//     list.innerHTML += listCoffees(coffees);
-//     console.log(coffees);
-//     element.addEventListener('keypress', function () {
-//         var input, filter;
-//             input = document.getElementById("myInput");
-//             filter = input.value.toUpperCase();
-//         if (element.name.includes(filter) == true) {
-//             // console.log(element.name);
-//             // displayCoffees.push(element);
-//         }
-//
-//     })
-//     // if (coffee.name.includes(filter) == true) {
-//     //     console.log(coffee.name);
-//     //     filteredCoffees.push(coffee);
-//     // }
-// });
-    // attempt to catch input from user and console log it.
-// var list = document.getElementById('myInput');
-
-// var list = document.querySelector('#myInput')[0].value;
-// var list = document.querySelector('#myInput').value;
-// // console.log(list);
-// list = Array.from(list);
-// coffees.forEach(function(list){
-//     list.addEventListener('keypress', function () {
-//         // var filter = list.value.toUpperCase();
-//         // console.log("value of input is " + filter);
-//         console.log(element);
-//     });
-// });
-
-// function myFunction() {
-//     var input, filter, ul, item;
-//     input = document.getElementById("myInput"); //input
-//     filter = input.value.toUpperCase();
-//     ul = document.getElementById("myUL"); //
-//     item = document.getElementById(input.value);
-//
-//     coffees.forEach(function(coffee) {
-//         // coffee.addEventListener()
-//         if (coffee.name.includes(filter)) {
-//             // input.removeChild(input.childNodes[0]);
-//             console.log(coffee.name);
-//             ul.removeChild(item);
-//         }
-//     });
-//
-//     // var list = document.getElementById('myUL');
-//     // list.innerHTML += listCoffees(filteredCoffees);
-//     // renderCoffees(coffees)
-// }
-// }

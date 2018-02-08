@@ -43,7 +43,6 @@ body {
 
 input {
     padding: 0;
-
 }
 
 input,
@@ -65,13 +64,11 @@ table {
     border: solid white;
     border-collapse: collapse;
     background-color: azure;
-    /*margin: 15px 0;*/
     color: white;
-    /*margin-left: 40%;*/
 }
 
 td, th {
-    border: 1px solid white;
+    border: 4px solid white;
     padding: 5px 10px;
     text-align: center;
 }
@@ -93,7 +90,6 @@ td, th {
 }
 
 #myInput {
-    /*background-image: url('/css/searchicon.png');*/
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 100%;
@@ -123,25 +119,40 @@ td, th {
 
 #myUL li a:hover:not(.header) {
     background-color: #eee;
+    padding: 0;
 }
 
 .table-background {
     background-color: black;
 }
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
-@media screen
-and (min-device-width: 1200px)
-and (max-device-width: 1600px)
-and (-webkit-min-device-pixel-ratio: 1) {
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .inputBox {
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-top: 5px;
+        margin-bottom: 0;
+        margin-left: 22px;
+    }
 }
 
-/*header[role="banner"] {*/
-/*#logo-main {*/
-/*display: block;*/
-/*margin: 20px auto;*/
-/*}*/
-/*}*/
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 
-/*.test-container {*/
-/*border: 1em solid black;*/
-/*}*/
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .inputBigScreen {
+        margin-top: -3em;
+        float: left;
+    }
+
+}
