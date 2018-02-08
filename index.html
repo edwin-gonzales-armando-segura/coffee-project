@@ -13,6 +13,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 
 
@@ -25,102 +26,84 @@
 
 </head>
 <body>
-<!--Update the html-->
-<!--Tables are a little old school, you need to refactor the code so that each coffee is displayed in a div that contains a heading displaying the coffee name, and the type of roast in a paragraph. Don't display the ids, these are only for our application's internal use-->
-
-<!--When the page loads, the coffees should be sorted by their ids in ascending order-->
-
-<!--Add functionality to search through the coffees by name, and display only the coffees that match the provided search term (You will need to add an input field to the existing form for this)-->
-
-<!--Add functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.-->
 <main class="container-fluid">
 
-    <div class="container page-container">
-        <header role="banner">
+    <header role="banner">
+        <div class="row site-branding">
+            <div class="col-sm site-title hidden-xs custom-nav">
+                        <a class="site-title hidden-xs custom-nav" href="http://localhost:63342/coffee-project/index.html?_ijt=cukond5vfq02e0qgs7h5flqefq" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive pic-position" border="0"></a>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm tagline slong-font">Drink Coffee, do more!</div>
 
-            <div class="row row-with-vspace site-branding container custom-nav container">
-                <!--FOR PAGE NAVIGATION BAR WHILE ON MEDIUM AND BIG SCREENS-->
-                <div class="col-xs-5 col-sm-3 site-title hidden-xs">
-                    <h1 class="site-title-heading">
-                        <a href="http://www.domorecoffee.com" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive" border="0"></a>
-                    </h1>
-                </div>
-                <!--FOR SLOGAN ON MEDIUM AND BIG SCREENS-->
-                <div class="col-xs-7 col-sm-9 page-header-top-right hidden-xs">
-                    <div class="tagline">Drink Coffee, do more!</div>
-                    <div class="sr-only">
-                        <a href="#content" title="Skip to content">Skip to content</a>
+            <div class="col-xm-12 site-title visible-xs custom-nav">
+                        <a class="site-title visible-xs custom-nav" href="http://localhost:63342/coffee-project/index.html?_ijt=cukond5vfq02e0qgs7h5flqefq" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive pic-position" border="0"></a>
+            </div>
+        </div><!--.site-branding-->
+
+        <div class="row main-navigation container-fluid">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default" role="navigation">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header visible-xs container-fluid">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#coffee-navbar-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand slong-font" href="#">Drink Coffee, do more!</a>
                     </div>
-                </div>
-                <!--FOR SMALL SCREENS-->
-                <div class="col-sm-12 site-title visible-xs">
-                    <h1 class="site-title-heading">
-                        <a href="http://www.domorecoffee" title="domore-coffee" rel="home"><img src="coffeeLogo1.jpg" class="img-responsive" border="0"></a>
-                    </h1>
-                </div>
-            </div><!--.site-branding-->
+                    <!---->
 
-            <div class="row main-navigation">
-                <div class="col-md-12 navbar-left">
-                    <nav class="navbar navbar-default" role="navigation">
+                    <div class="collapse navbar-collapse navbar-primary-collapse" id="coffee-navbar-main">
+                        <ul class="nav navbar-nav">
+                            <li id="menu-item-home" class="menu-item active"><a href="http://localhost:63342/coffee-project/index.html?_ijt=cukond5vfq02e0qgs7h5flqefq">Home</a></li>
 
-                        <div class="collapse navbar-collapse navbar-primary-collapse">
-                            <ul id="menu-menu-1" class="nav navbar-nav">
-                                <li id="menu-item-110" class="menu-item active active"><a href="#/">Home</a></li>
+                            <li class="dropdown" id="roast-selection">
+                                <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                                    Coffee<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu coffeeSelector">
 
-                                <li class="dropdown btn-group" id="roast-selection">
-                                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
-                                        Coffee<span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu coffeeSelector">
+                                    <li id="submenu1" class="menu-item">
+                                    <a id="light" class="dropdown-item roast" href="#">Light</a></li>
 
-                                        <li id="submenu1" class="menu-item">
-                                        <a id="light" class="dropdown-item roast" href="#">Light</a></li>
+                                    <li class="menu-item">
+                                    <a id="medium" class="dropdown-item roast" href="#">Medium</a></li>
 
-                                        <li class="menu-item">
-                                        <a id="medium" class="dropdown-item roast" href="#">Medium</a></li>
+                                    <li class="menu-item">
+                                    <a id="dark" class="dropdown-item roast" href="#">Dark</a></li>
 
-                                        <li class="menu-item">
-                                        <a id="dark" class="dropdown-item roast" href="#">Dark</a></li>
+                                    <li class="menu-item">
+                                        <a id="all" class="dropdown-item roast" href="#">All</a></li>
 
-                                    </ul>
-                                </li>
+                                </ul>
+                            </li>
 
-                                <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168">
-                                    <a href="#/project_gallery/">Gallery</a></li>
-                                <li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-205">
-                                    <a href="#">Contact us</a></li>
-                                <li>
-                                    <div class="navbar-right">
-                                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">
-                                    </div>
-                                </li>
-                            </ul>
+                            <li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168">
+                                <a href="#/project_gallery/">Gallery</a></li>
+                            <li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-205">
+                                <a href="#">Contact us</a></li>
+                            <li class="navbar-right">
+                                <div class="container-fluid">
+                                <input class="inputBox" type="text" id="myInput" onkeyup="myFunction()" placeholder="Look for a coffee here now" title="Coffee name">
+                                    <!--<input type="text" id="myInput" placeholder="Look for a coffee here now" title="Coffee name">-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--.navbar-collapse-->
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--</div>&lt;!&ndash;.page-container&ndash;&gt;-->
 
-                        </div><!--.navbar-collapse-->
-                    </nav>
-                </div>
-
-                <!--SPLIT IN NAVBAR-->
-
-                <!--<div class="col-md-6 navbar-right">-->
-                    <!--<nav class="navbar navbar-default" role="navigation">-->
-
-                        <!--<div class="collapse navbar-collapse navbar-primary-collapse">-->
-                            <!--<ul  class="nav navbar-nav">-->
-                                <!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">-->
-                            <!--</ul>-->
-
-                        <!--</div>&lt;!&ndash;.navbar-collapse&ndash;&gt;-->
-                    <!--</nav>-->
-                <!--</div>&lt;!&ndash;.main-navigation&ndash;&gt;-->
-        </header>
-    </div><!--.page-container-->
-
-    <div class="container page-container table-background">
+    <div class="container page-container">
         <div class="row row-with-vspace site-branding container">
-            <div class="col-sm-12">
-                <table class="table table-condensed">
+            <div class="col-sm-6 table-background">
+                <table class="table table-stripped layer">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -131,36 +114,31 @@
                     <tbody id="coffees"></tbody>
                 </table>
             </div>
+            <div class="col-sm-6 hidden-xs">
+                <ul id="myUL">
+
+                    <!--<li><a href="#">"Light City" (light)</a></li>-->
+                    <!--<li><a href="#">"Half City" (light)</a></li>-->
+
+                    <!--<li><a href="#">"Cinnamon" (light roast)</a></li>-->
+                    <!--<li><a href="#">"City" (medium roast)</a></li>-->
+                    <!--<li><a href="#">"American" (medium)</a></li>-->
+                    <!--<li><a href="#">"Breakfast" (medium)</a></li>-->
+                    <!--<li><a href="#">"High" (dark)</a></li>-->
+                    <!--<li><a href="#">"Continental" (dark)</a></li>-->
+                    <!--<li><a href="#">"New Orleans" (dark)</a></li>-->
+
+                    <!--<li><a href="#">"European" (dark roast)</a></li>-->
+                    <!--<li><a href="#">"Espresso" (dark roast)</a></li>-->
+                    <!--<li><a href="#">"Viennese" (dark roast)</a></li>-->
+                    <!--<li><a href="#">"Italian" (dark roast)</a></li>-->
+                    <!--<li><a href="#">"French" (dark roast)</a></li>-->
+
+                </ul>
+            </div>
+
         </div>
     </div>
-
-
-    <!--#########  From Armando -->
-
-    <!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Showing all Coffee Types" title="Coffee name">-->
-
-    <ul id="myUL">
-        <li><a href="#">"Light City" (light)</a></li>
-        <li><a href="#">"Half City" (light)</a></li>
-
-        <li><a href="#">"Cinnamon" (light roast)</a></li>
-        <li><a href="#">"City" (medium roast)</a></li>
-        <li><a href="#">"American" (medium)</a></li>
-        <li><a href="#">"Breakfast" (medium)</a></li>
-        <li><a href="#">"High" (dark)</a></li>
-        <li><a href="#">"Continental" (dark)</a></li>
-        <li><a href="#">"New Orleans" (dark)</a></li>
-
-        <li><a href="#">"European" (dark roast)</a></li>
-        <li><a href="#">"Espresso" (dark roast)</a></li>
-        <li><a href="#">"Viennese" (dark roast)</a></li>
-        <li><a href="#">"Italian" (dark roast)</a></li>
-        <li><a href="#">"French" (dark roast)</a></li>
-    </ul>
-
-
-
-
 
     <script src="main.js"></script>
     <script
@@ -170,9 +148,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
 </main>
 </body>
 </html>
-
-

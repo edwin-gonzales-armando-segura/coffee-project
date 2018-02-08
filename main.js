@@ -6,7 +6,6 @@ function renderCoffee(coffee) {
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
-
     return html;
 }
 
@@ -15,12 +14,11 @@ function renderCoffees(coffees) {
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
+    // console.log(html)
     return html;
 }
 
 function updateCoffees(finalRoast) {
-    // e.preventDefault(); // don't submit the form, we just want to update the data
-    // var selectedRoast = selection;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === finalRoast) {
@@ -30,7 +28,6 @@ function updateCoffees(finalRoast) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -56,26 +53,32 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
+//menu-bar dropdown logic
 var selectingCoffee = document.getElementsByClassName('roast');
 selectingCoffee = Array.from(selectingCoffee);
 selectingCoffee.forEach(function (element) {
     element.addEventListener('click', function() {
         var selection = element.innerText;
         var finalRoast = selection.toLowerCase();
-        console.log(finalRoast);
         updateCoffees(finalRoast);
+        // when user clicks all on table, this calls function renderCoffees and displays it.
+        if (finalRoast === "all" ){
+            tbody.innerHTML = renderCoffees(coffees);
+        }
     });
-
 });
 
+// select what is placed on the DOM
 function myFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
+    console.log(filter);
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
+        console.log(a);
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
@@ -84,3 +87,80 @@ function myFunction() {
         }
     }
 }
+
+populateList();
+
+function populateList () {
+    for (var i = 1; i < coffees.length; i += 1) {
+        var list = document.getElementById('myUL');
+        list.innerHTML += renderCoffeeList(coffees[i]);
+    }
+}
+
+function renderCoffeeList (coffee) {
+    var html = '<li>' + '<a' + ' href="#">' + coffee.name + ' (' + coffee.roast + ')' + '</a>' + '</li>';
+    return html;
+}
+
+function listCoffees (coffee) {
+    var html = '<li>' + '<a' + ' href="#">' + coffee[0].name + ' (' + coffee[0].roast + ')' + '</a>' + '</li>';
+    return html;
+}
+
+
+// function unusedCode() {
+//
+// list.forEach(function(element) {
+//     list.innerHTML += listCoffees(coffees);
+//     console.log(coffees);
+//     element.addEventListener('keypress', function () {
+//         var input, filter;
+//             input = document.getElementById("myInput");
+//             filter = input.value.toUpperCase();
+//         if (element.name.includes(filter) == true) {
+//             // console.log(element.name);
+//             // displayCoffees.push(element);
+//         }
+//
+//     })
+//     // if (coffee.name.includes(filter) == true) {
+//     //     console.log(coffee.name);
+//     //     filteredCoffees.push(coffee);
+//     // }
+// });
+    // attempt to catch input from user and console log it.
+// var list = document.getElementById('myInput');
+
+// var list = document.querySelector('#myInput')[0].value;
+// var list = document.querySelector('#myInput').value;
+// // console.log(list);
+// list = Array.from(list);
+// coffees.forEach(function(list){
+//     list.addEventListener('keypress', function () {
+//         // var filter = list.value.toUpperCase();
+//         // console.log("value of input is " + filter);
+//         console.log(element);
+//     });
+// });
+
+// function myFunction() {
+//     var input, filter, ul, item;
+//     input = document.getElementById("myInput"); //input
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL"); //
+//     item = document.getElementById(input.value);
+//
+//     coffees.forEach(function(coffee) {
+//         // coffee.addEventListener()
+//         if (coffee.name.includes(filter)) {
+//             // input.removeChild(input.childNodes[0]);
+//             console.log(coffee.name);
+//             ul.removeChild(item);
+//         }
+//     });
+//
+//     // var list = document.getElementById('myUL');
+//     // list.innerHTML += listCoffees(filteredCoffees);
+//     // renderCoffees(coffees)
+// }
+// }
