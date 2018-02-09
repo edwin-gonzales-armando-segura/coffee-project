@@ -2,24 +2,21 @@
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
     return html;
-}
+} // function to arrange values for tables.
 
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
-    // console.log(html)
     return html;
-    console.log(html);
-}
+} // function to gather html data from renderCoffee function and add it to html as a string.
 
-function updateCoffees(finalRoast) {
+function updateCoffees(finalRoast) { // edited for new navbar listening and specs
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === finalRoast) {
@@ -47,9 +44,8 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('.menu-item');
-var roastSelection = document.querySelector('#roast-selection');
-
+// var submitButton = document.querySelector('.menu-item');
+// var roastSelection = document.querySelector('#roast-selection');
 
 sortArray(coffees);
 
@@ -58,13 +54,10 @@ function sortArray (coffees) {
     coffees.sort(function (a, b) {
         return b.id - a.id;
     });
-    console.log(coffees);
-
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener('click', updateCoffees);
 
 //menu-bar dropdown logic
 var selectingCoffee = document.getElementsByClassName('roast');
@@ -73,51 +66,46 @@ selectingCoffee.forEach(function (element) {
     element.addEventListener('click', function() {
         var selection = element.innerText;
         var finalRoast = selection.toLowerCase();
+        // console.log(finalRoast);  //needed to lowercase since updateCoffees() function was comparing this value to the name of the "roast" value, and that is in lower case.
         updateCoffees(finalRoast);
         // when user clicks all on table, this calls function renderCoffees and displays it.
         if (finalRoast === "all" ){
-            tbody.innerHTML = renderCoffees(coffees);
+            // tbody.innerHTML = renderCoffees(coffees);
+            sortArray(coffees);
         }
     });
 });
 
 // select what is placed on the DOM
-function myFunction() {
+function sortByFirstLetter() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
-    // input = document.getElementsByClassName("inputBox");
     filter = input.value.toUpperCase();
-    console.log(filter);
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
-        console.log(a);
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        // if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        if (a.innerHTML.toUpperCase().charAt(0).includes(filter)) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-
         }
     }
 }
 
-function myFunction2() {
+function sortByFirstLetter2() {
     var input, filter, ul, li, a, i;
-    // input = document.getElementById("myInput");
     input = document.getElementsByClassName("inputBox");
     filter = input[0].value.toUpperCase();
-    console.log(filter);
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
-        console.log(a);
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        if (a.innerHTML.toUpperCase().charAt(0).includes(filter)) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-
         }
     }
 }

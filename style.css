@@ -119,7 +119,6 @@ td, th {
 
 #myUL li a:hover:not(.header) {
     background-color: #eee;
-    padding: 0;
 }
 
 .table-background {
@@ -154,5 +153,4 @@ td, th {
         margin-top: -3em;
         float: left;
     }
-
 }

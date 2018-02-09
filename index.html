@@ -7,23 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Coffee Project</title>
     <link rel="stylesheet" href="style.css">
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script
             src="http://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
-
 </head>
 <body>
 <main class="container-fluid">
@@ -44,7 +37,6 @@
         <div class="row main-navigation container-fluid">
             <div class="col-md-12">
                 <nav class="navbar navbar-default" role="navigation">
-
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header visible-xs container-fluid">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#coffee-navbar-main" aria-expanded="false">
@@ -55,8 +47,6 @@
                         </button>
                         <a class="navbar-brand slong-font" href="#">Drink Coffee, do more!</a>
                     </div>
-                    <!---->
-
                     <div class="collapse navbar-collapse navbar-primary-collapse" id="coffee-navbar-main">
                         <ul class="nav navbar-nav">
                             <li id="menu-item-home" class="menu-item active"><a href="http://localhost:63342/coffee-project/index.html?_ijt=cukond5vfq02e0qgs7h5flqefq">Home</a></li>
@@ -68,7 +58,7 @@
                                 <ul class="dropdown-menu coffeeSelector">
 
                                     <li id="submenu1" class="menu-item">
-                                    <a id="light" class="dropdown-item roast" href="#">Light</a></li>
+                                    <a id="light" class="dropdown-item roast" href="#">Light</a></li>  <!-- Class name ROAST for toolbar logic -->
 
                                     <li class="menu-item">
                                     <a id="medium" class="dropdown-item roast" href="#">Medium</a></li>
@@ -78,7 +68,6 @@
 
                                     <li class="menu-item">
                                         <a id="all" class="dropdown-item roast" href="#">All</a></li>
-
                                 </ul>
                             </li>
 
@@ -86,15 +75,16 @@
                                 <a href="#/project_gallery/">Gallery</a></li>
                             <li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-205">
                                 <a href="#">Contact us</a></li>
+
                             <li class="navbar-right hidden-sm">
                                 <div class="container-fluid">
-                                <input class="inputBigScreen" type="text" id="myInput" onkeyup="myFunction()" placeholder="Look for a coffee here now" title="Coffee name">
+                                <input class="inputBigScreen" type="text" id="myInput" onkeyup="sortByFirstLetter()" placeholder="Look for a coffee here now" title="Coffee name">
                                     <!--<input type="text" id="myInput" placeholder="Look for a coffee here now" title="Coffee name">-->
                                 </div>
                             </li>
                             <li class="navbar visible-sm">
                                 <div class="container-fluid">
-                                    <input class="inputBox" type="text" onkeyup="myFunction2()" placeholder="Look for a coffee here now" title="Coffee name">
+                                    <input class="inputBox" type="text" onkeyup="sortByFirstLetter2()" placeholder="Look for a coffee here now" title="Coffee name">
                                     <!--<input type="text" id="myInput" placeholder="Look for a coffee here now" title="Coffee name">-->
                                 </div>
                             </li>
@@ -104,8 +94,6 @@
             </div>
         </div>
     </header>
-    <!--</div>&lt;!&ndash;.page-container&ndash;&gt;-->
-
     <div class="container page-container">
         <div class="row row-with-vspace site-branding container">
             <div class="col-sm-6 table-background">
