@@ -1,3 +1,25 @@
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    background: url(coffeeLogo1.jpg) repeat;
+    background-size: cover;
+    color: #fff;
+    box-shadow: 0 2px 1px rgba(0,0,0,.5);
+}
+
+.container h1 {
+    color: white;
+}
+
 body {
     background-image: url("background-photo.jpg");
     -webkit-background-size: cover;
